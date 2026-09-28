@@ -1,0 +1,26 @@
+\chapter{Технологическая часть}
+\section{Средства разработки}
+В качестве языка программирования был выбран Swift, так как он является языком со статической типизацией и является основным языком для разработки на операционную систему MacOS, на которой выполнялась лабораторная работа.
+\section{Реализация алгоритмов} 
+
+
+\lstinputlisting[caption={Поиск полным перебором}, label={lst:brute_force_search}]{brute_force_search.swift}
+\lstinputlisting[caption={Нерекурсивный бинарный поиск}, label={lst:bin_search_1}, firstline=3, lastline=18]{bin_search_1.swift}
+\lstinputlisting[caption={Нерекурсивный бинарный поиск с предварительным выходом}, label={lst:bin_search_2}, firstline=3, lastline=18]{bin_search_2.swift}
+\lstinputlisting[caption={Рекурсивный бинарный поиск}, label={lst:bin_search_r}, firstline=5, lastline=20]{bin_search_recursion.swift}
+\lstinputlisting[caption={Оберточная функция для рекурсивного бинарного поиска}, label={lst:wrapper}, lastline=3]{bin_search_recursion.swift}
+
+Для единообразия интерфейсам функци при реализациия рекурсивного бинарно поиска \ref{lst:bin_search_r} используется оберточная функция \ref{lst:wrapper}
+
+\section{Тестирование}
+\input{parts/tests-table.tex}
+Все тесты пройдены успешно
+
+\section{Вывод}
+В результате технологической части были выбраны средства реализации,
+реализованы алгоритм поиска полным перебором, два варианта нерекурсивного
+бинарного поиска и рекурсивный бинарный поиск, а также проведено их
+функциональное тестирование: все реализации прошли тесты, приведённые
+в таблице~\ref{tbl:tests}.
+
+
