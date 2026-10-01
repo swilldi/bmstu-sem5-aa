@@ -2,8 +2,9 @@
 \caption{Сравнение алгоритмов поиска}
 \label{tbl:search-comparison}
 \centering
-\setlength{\tabcolsep}{4pt}
-\begin{NiceTabular}{C{0.21}C{0.15}C{0.15}C{0.24}C{0.25}}[hvlines]
+\setlength{\tabcolsep}{2.5pt}
+% доли подобраны под самые длинные слова столбцов; сумма меньше 1 на толщину линеек
+\begin{NiceTabular}{C{0.206}C{0.148}C{0.148}C{0.248}C{0.244}}[hvlines]
 \Block{2-1}{\diagbox{\bfseries Алгоритм}{\bfseries Критерии}}
   & \Block{1-2}{\bfseries Оценка временной\\ \bfseries эффективности как\\ \bfseries функции от числа\\ \bfseries необходимых\\ \bfseries сравнений}
   &
@@ -28,6 +29,6 @@
   & $1$
   & $2 \log_2 N$
   &
-  & $\log_2 N$ вызовов, т.\,е. $\log_2 N \cdot {}$(размер кадра стека) памяти \\
+  & \Block{1-1}{$\log_2 N \cdot M_s \to O(\log_2N)$,\\ $\log_2N$ вызовов}
 \end{NiceTabular}
 \end{table}

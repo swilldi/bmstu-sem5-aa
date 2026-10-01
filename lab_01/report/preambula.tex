@@ -24,9 +24,11 @@
 
 \usepackage{nicematrix}
 % столбец заданной доли ширины строки, центрированный по обеим осям
-\newcolumntype{C}[1]{>{\centering\arraybackslash}m{\dimexpr#1\linewidth-2\tabcolsep\relax}}
+% \hspace{0pt} разрешает перенос первого слова в ячейке
+\newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}m{\dimexpr#1\linewidth-2\tabcolsep\relax}}
 
 \usepackage{hyperref}
+\hypersetup{hidelinks}
 
 \UseTblrLibrary{diagbox}
 
@@ -42,6 +44,14 @@
 \newcommand{\ssr}[1]{\begin{center}
 		\LARGE\bfseries{#1}
 	\end{center} \addcontentsline{toc}{chapter}{#1}  }
+
+% заголовок списка источников оформляется так же, как ВВЕДЕНИЕ и ЗАКЛЮЧЕНИЕ
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\thebibliography}
+  {\chapter*{\bibname\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}}
+  {\ssr{\bibname}}{}{}
+\makeatother
 
 \makeatletter
 \renewcommand\LARGE{\@setfontsize\LARGE{22pt}{20}}
@@ -59,6 +69,8 @@
 \titlespacing{\subsection}{12.5mm}{10pt}{10pt}
 \titlespacing{\subsubsection}{12.5mm}{10pt}{10pt}
 
+\setcounter{secnumdepth}{3}
+
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1.}
 \makeatother
@@ -72,11 +84,14 @@
 %\titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
 
 \geometry{left=30mm}
-\geometry{right=10mm}
+\geometry{right=15mm}
 \geometry{top=20mm}
 \geometry{bottom=20mm}
 
 \onehalfspacing
+
+% запас растяжения пробелов, чтобы строки не вылезали за правое поле
+\setlength{\emergencystretch}{3em}
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\arabic{enumi}\text{)}}
@@ -136,7 +151,7 @@
 %\LetLtxMacro\itemold\item
 %\renewcommand{\item}{\itemindent0.75cm\itemold}
 
-\def\labelitemi{---}
+\def\labelitemi{-}
 \setlist[itemize]{leftmargin=1.25cm, itemindent=0.65cm}
 \setlist[enumerate]{leftmargin=1.25cm, itemindent=0.55cm}
 

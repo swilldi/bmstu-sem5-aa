@@ -1,10 +1,9 @@
-\renewcommand\refname{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
-% Запись в содержании ставится до списка, чтобы в нем была первая страница списка
+\renewcommand\bibname{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+% Заголовок и запись в содержании выводит \ssr (см. \patchcmd в преамбуле)
 \clearpage
 \phantomsection
-\addcontentsline{toc}{section}{\refname}
 \begingroup
-\bibliographystyle{auto/gost705}
+\bibliographystyle{ugost2008}
 \raggedright
 \bibliography{parts/bibliography}
 \endgroup

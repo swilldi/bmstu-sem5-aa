@@ -1,20 +1,34 @@
 \chapter{Технологическая часть}
 \section{Средства разработки}
-В качестве языка программирования был выбран Swift, так как он является языком со статической типизацией и является основным языком для разработки на операционную систему MacOS, на которой выполнялась лабораторная работа.
-\section{Реализация алгоритмов} 
+В качестве языка программирования был выбран Swift, так как он является языком со статической типизацией и основным языком разработки для операционной системы macOS, на которой выполнялась лабораторная работа.
+\section{Реализация алгоритмов}
+Реализации алгоритмов приведены в листингах~\ref{lst:brute_force_search}--\ref{lst:wrapper}. Для единообразия интерфейсов функций при реализации рекурсивного бинарного поиска (листинг~\ref{lst:bin_search_r}) используется обёрточная функция (листинг~\ref{lst:wrapper}).
 
-
+% каждый листинг в minipage, чтобы он не разрывался между страницами
+\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[caption={Поиск полным перебором}, label={lst:brute_force_search}]{brute_force_search.swift}
-\lstinputlisting[caption={Нерекурсивный бинарный поиск}, label={lst:bin_search_1}, firstline=3, lastline=18]{bin_search_1.swift}
-\lstinputlisting[caption={Нерекурсивный бинарный поиск с предварительным выходом}, label={lst:bin_search_2}, firstline=3, lastline=18]{bin_search_2.swift}
-\lstinputlisting[caption={Рекурсивный бинарный поиск}, label={lst:bin_search_r}, firstline=5, lastline=20]{bin_search_recursion.swift}
-\lstinputlisting[caption={Оберточная функция для рекурсивного бинарного поиска}, label={lst:wrapper}, lastline=3]{bin_search_recursion.swift}
+\end{minipage}
 
-Для единообразия интерфейсам функци при реализациия рекурсивного бинарно поиска \ref{lst:bin_search_r} используется оберточная функция \ref{lst:wrapper}
+\noindent\begin{minipage}{\linewidth}
+\lstinputlisting[caption={Нерекурсивный бинарный поиск}, label={lst:bin_search_1}, lastline=18]{bin_search_1.swift}
+\end{minipage}
+
+\noindent\begin{minipage}{\linewidth}
+\lstinputlisting[caption={Нерекурсивный бинарный поиск с предварительным выходом}, label={lst:bin_search_2}, lastline=18]{bin_search_2.swift}
+\end{minipage}
+
+\noindent\begin{minipage}{\linewidth}
+\lstinputlisting[caption={Рекурсивный бинарный поиск}, label={lst:bin_search_r}, firstline=4, lastline=20]{bin_search_recursion.swift}
+\end{minipage}
+
+\noindent\begin{minipage}{\linewidth}
+\lstinputlisting[caption={Обёрточная функция для рекурсивного бинарного поиска}, label={lst:wrapper}, lastline=3]{bin_search_recursion.swift}
+\end{minipage}
 
 \section{Тестирование}
+Набор функциональных тестов, применявшийся ко всем реализациям алгоритмов, приведён в таблице~\ref{tbl:tests}.
 \input{parts/tests-table.tex}
-Все тесты пройдены успешно
+Все тесты пройдены успешно.
 
 \section{Вывод}
 В результате технологической части были выбраны средства реализации,

@@ -1,5 +1,3 @@
-// отложенный выход, то есть до схождения левой и правой границ
-
 func bin_search_1(_ array: [Int], target: Int) -> Int {
     var l = 0, r = array.count - 1
     while l < r {

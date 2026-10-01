@@ -1,5 +1,3 @@
-// проверка среднего элемента каждый раз
-
 func bin_search_2(_ array: [Int], target: Int) -> Int {
     var l = 0, r = array.count - 1
     while l <= r {
